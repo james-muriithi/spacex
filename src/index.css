@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'D-DIN';
+    src: url('fonts/D-DIN-Bold.otf') format('otf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'D-DIN';
+    src: url('fonts/D-DIN.otf') format('otf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'D-DIN';
+    src: url('fonts/D-DIN.otf') format('otf');
+    font-weight: 500;
+}
+
+@layer components {
+    html,
+    body,
+    #app {
+        @apply bg-dark h-full;
+    }
+}
