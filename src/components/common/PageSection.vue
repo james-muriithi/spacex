@@ -3,7 +3,7 @@
     class="h-full relative"
     :style="{ backgroundImage: `url(${backgroundImage})` }"
   >
-    <div class="absolute bottom-32 text-white left-8 lg:left-20">
+    <div class="absolute bottom-32 text-white left-8 lg:left-20 w-1/2">
       <h4 class="uppercase text-xl font-normal mb-4" v-if="subTitle">
         {{ subTitle }}
       </h4>
