@@ -8,13 +8,15 @@
         {{ subTitle }}
       </h4>
       <h2 class="text-5xl font-bold">{{ title }}</h2>
-      <slot />
+      <SectionButton to="#"> {{ buttonText }} </SectionButton>
     </div>
   </section>
 </template>
 
 <script>
+import SectionButton from "./SectionButton.vue";
 export default {
+  components: { SectionButton },
   name: "PageSection",
   props: {
     desktopBgImage: {
@@ -30,6 +32,10 @@ export default {
       required: false,
     },
     title: {
+      type: String,
+      required: true,
+    },
+    buttonText: {
       type: String,
       required: true,
     },

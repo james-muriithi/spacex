@@ -1,13 +1,5 @@
 <template>
-  <PageSection
-    id="banner"
-    :mobileBgImage="mobileBgImage"
-    :desktopBgImage="desktopBgImage"
-    title="NILESAT 301 MISSION"
-    subTitle="recent mission"
-  >
-    <SectionButton to="#"> Rewatch </SectionButton>
-  </PageSection>
+  
 </template>
 
 <script>
