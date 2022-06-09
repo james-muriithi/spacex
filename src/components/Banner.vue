@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import SectionButton from "./SectionButton.vue";
+import SectionButton from "@/components/common/SectionButton.vue";
 export default {
   components: { SectionButton },
   name: "Banner",

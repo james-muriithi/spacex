@@ -2,8 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue';
 import router from './router';
 
-import PageSection from "@/components/PageSection.vue";
-import './index.css';
+import PageSection from "@/components/common/PageSection.vue";
+import '@/index.css';
 
 const app = createApp(App)
 
