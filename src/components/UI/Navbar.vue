@@ -1,6 +1,6 @@
 <template>
   <nav class="bg-transparent px-2 sm:px-4 py-4 md:py-6 absolute w-full z-10">
-    <div class="flex lg:justify-between items-center xl:container md:mx-6">
+    <div class="flex lg:justify-between items-center md:mx-6">
       <router-link :to="{ name: 'home' }" class="flex items-center mx-auto lg:ml-0 lg:mr-0">
         <img src="@/assets/logo.svg" class="h-6 sm:h-6" alt="Spacex Logo" />
       </router-link>
