@@ -1,11 +1,16 @@
 <template>
-  <nav class="bg-dark px-2 sm:px-4 py-8">
-    <div class="container flex flex-wrap justify-between items-center mx-auto">
+  <nav class="bg-transparent px-2 sm:px-4 py-4 md:py-6 absolute w-full z-10">
+    <div class="flex lg:justify-between items-center xl:container md:mx-6">
       <router-link :to="{ name: 'home' }" class="flex items-center">
         <img src="@/assets/logo.svg" class="h-6 sm:h-6" alt="Spacex Logo" />
       </router-link>
       <div class="flex items-center md:order-2">
-        <router-link to="#" class="text-white uppercase md:text-sm md:font-medium">shop</router-link>
+        <router-link
+          :to="{ name: navbarItems[navbarItems.length - 1]['routeName'] }"
+          class="text-white uppercase md:text-sm md:font-medium lg:block hidden"
+        >
+          {{ navbarItems[navbarItems.length - 1]["title"] }}
+        </router-link>
         <button
           data-collapse-toggle="mobile-menu-2"
           type="button"
@@ -53,18 +58,25 @@
           justify-between
           items-center
           w-full
-          md:flex md:w-auto md:order-1
+          lg:flex md:w-auto md:order-1
         "
         id="mobile-menu-2"
       >
         <ul
           class="
             flex flex-col
-            md:flex-row md:text-sm md:space-x-4 md:font-medium
-            uppercase items-center
+            md:flex-row md:text-sm space-x-3 lg:space-x-5 md:font-medium
+            uppercase
+            items-center
           "
         >
-          <li v-for="({ title, routeName }, index) in navbarItems" :key="index">
+          <li
+            v-for="({ title, routeName }, index) in navbarItems.slice(
+              0,
+              navbarItems.length - 1
+            )"
+            :key="index"
+          >
             <router-link
               :to="{ name: routeName }"
               class="block pr-1 text-white"
@@ -111,6 +123,10 @@ export default {
         },
         {
           title: "starlink",
+          routeName: "home",
+        },
+        {
+          title: "shop",
           routeName: "home",
         },
       ],
