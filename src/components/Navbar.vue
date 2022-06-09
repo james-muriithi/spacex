@@ -7,9 +7,16 @@
       <div class="flex items-center md:order-2">
         <router-link
           :to="{ name: navbarItems[navbarItems.length - 1]['routeName'] }"
-          class="text-white uppercase md:text-sm md:font-medium lg:block hidden"
+          class="
+            text-white
+            uppercase
+            md:text-sm md:font-medium
+            lg:block
+            hidden
+            nav-link
+          "
         >
-          {{ navbarItems[navbarItems.length - 1]["title"] }}
+          <span>{{ navbarItems[navbarItems.length - 1]["title"] }}</span>
         </router-link>
         <button
           data-collapse-toggle="mobile-menu-2"
@@ -58,14 +65,18 @@
           justify-between
           items-center
           w-full
-          lg:flex md:w-auto md:order-1
+          lg:flex
+          md:w-auto md:order-1
         "
         id="mobile-menu-2"
       >
         <ul
           class="
             flex flex-col
-            md:flex-row md:text-sm space-x-3 lg:space-x-5 md:font-medium
+            md:flex-row md:text-sm
+            space-x-3
+            lg:space-x-5
+            md:font-medium
             uppercase
             items-center
           "
@@ -79,10 +90,10 @@
           >
             <router-link
               :to="{ name: routeName }"
-              class="block pr-1 text-white"
+              class="block pr-1 text-white nav-link"
               aria-current="page"
             >
-              {{ title }}
+              <span>{{ title }}</span>
             </router-link>
           </li>
         </ul>
@@ -134,3 +145,30 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.nav-link {
+  span {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      @apply bg-white;
+      transform: scaleX(0);
+      transform-origin: right center;
+      transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+  }
+  &:hover {
+    @apply text-white border-white;
+    span::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}
+</style>

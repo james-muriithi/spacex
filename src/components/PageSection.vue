@@ -1,6 +1,6 @@
 <template>
   <section
-    class="h-full"
+    class="h-full relative"
     :style="{ backgroundImage: `url(${backgroundImage})` }"
   >
   <slot />

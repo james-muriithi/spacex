@@ -16,11 +16,11 @@
 
 @font-face {
     font-family: 'D-DIN';
-    src: url('fonts/D-DIN.otf') format('otf');
+    src: url('fonts/D-DINCondensed.otf') format('otf');
     font-weight: 500;
 }
 
-@layer components {
+@layer base {
     html,
     body,
     #app {
