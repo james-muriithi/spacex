@@ -1,8 +1,14 @@
 <template>
   <div class="mt-10">
-    <router-link to="" class="border-white border-2 px-14 py-4 relative">
+    <router-link
+      to=""
+      v-bind="$attrs"
+      class="border-white border-2 px-14 py-4 relative"
+    >
       <div class="absolute hover top-0 left-0 w-full h-full"></div>
-      <span class="relative z-10 uppercase">Rewatch</span>
+      <span class="relative z-10 uppercase text">
+        <slot />
+      </span>
     </router-link>
   </div>
 </template>
@@ -10,6 +16,7 @@
 <script>
 export default {
   name: "SectionButton",
+  inheritAttrs: false,
 };
 </script>
 
@@ -40,6 +47,10 @@ a {
       -webkit-transform-origin: bottom center;
       transform-origin: bottom center;
     }
+  }
+  .text {
+    -webkit-transition: color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   }
 }
 </style>

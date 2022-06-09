@@ -3,7 +3,13 @@
     class="h-full relative"
     :style="{ backgroundImage: `url(${backgroundImage})` }"
   >
-  <slot />
+    <div class="absolute bottom-32 text-white left-20">
+      <h4 class="uppercase text-xl font-normal mb-4" v-if="subTitle">
+        {{ subTitle }}
+      </h4>
+      <h2 class="text-5xl font-bold">{{ title }}</h2>
+      <slot />
+    </div>
   </section>
 </template>
 
@@ -16,6 +22,14 @@ export default {
       required: true,
     },
     mobileBgImage: {
+      type: String,
+      required: true,
+    },
+    subTitle: {
+      type: String,
+      required: false,
+    },
+    title: {
       type: String,
       required: true,
     },

@@ -27,3 +27,7 @@
         @apply bg-dark h-full;
     }
 }
+
+* {
+    box-sizing: border-box;
+}

@@ -3,27 +3,21 @@
     id="banner"
     :mobileBgImage="mobileBgImage"
     :desktopBgImage="desktopBgImage"
+    title="NILESAT 301 MISSION"
+    subTitle="recent mission"
   >
-    <div class="absolute bottom-32 text-white left-20">
-      <h4 class="uppercase text-xl font-normal mb-4">
-        recent mission
-      </h4>
-      <h2 class="text-5xl font-bold">
-        NILESAT 301 MISSION
-      </h2>
-      <SectionButton />
-    </div>
+    <SectionButton to="#"> Rewatch </SectionButton>
   </PageSection>
 </template>
 
 <script>
-import SectionButton from './SectionButton.vue';
+import SectionButton from "./SectionButton.vue";
 export default {
-    name: "Banner",
-    computed: {
-        mobileBgImage: () => "/images/banner-mobile.webp",
-        desktopBgImage: () => "/images/banner-desktop.webp",
-    },
-    components: { SectionButton }
+  components: { SectionButton },
+  name: "Banner",
+  computed: {
+    mobileBgImage: () => "/images/banner-mobile.webp",
+    desktopBgImage: () => "/images/banner-desktop.webp",
+  },
 };
 </script>
