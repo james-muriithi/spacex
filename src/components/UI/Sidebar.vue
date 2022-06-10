@@ -24,7 +24,16 @@
       v-if="sidebarOpen"
     >
       <div>
-        <div class="flex justify-between sm:block sm:text-right">
+        <div
+          class="
+            flex
+            justify-between
+            items-center
+            mb-3
+            md:mb-0
+            sm:block sm:text-right
+          "
+        >
           <router-link :to="{ name: 'home' }" class="block sm:hidden">
             <img src="@/assets/logo.svg" class="h-5" alt="Spacex Logo" />
           </router-link>
@@ -47,6 +56,7 @@
                 text-right
                 hover-dim
               "
+              :style="{ animationDelay: `${calculateDelay(index + 1 / 2)}` }"
             >
               {{ title }}
             </router-link>
@@ -56,6 +66,13 @@
             :key="index"
             :to="{ name: routeName }"
             class="block border-b border-gray-700 py-2 text-right hover-dim"
+            :style="{
+              animationDelay: calculateDelay(
+                navbarVisible
+                  ? index + 1 / 2
+                  : navbarItems.length + index + 1 / 2
+              ),
+            }"
           >
             {{ title }}
           </router-link>
@@ -87,6 +104,9 @@ export default {
     },
   },
   computed: {
+    navbarVisible() {
+      return window.innerWidth > 1024;
+    },
     navbarItems: () => menuItems.slice(0, -1),
     sidebarItems: () => [
       {
@@ -108,6 +128,11 @@ export default {
       ...menuItems.slice(-1),
     ],
   },
+  methods: {
+    calculateDelay(seconds) {
+      return `${seconds / 10}s`;
+    },
+  },
 };
 </script>
 
@@ -124,6 +149,14 @@ export default {
   background: rgba(0, 0, 0, 0.5);
 }
 
+.hover-dim {
+  animation: FadeIn 1s linear;
+  animation-fill-mode: both;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  opacity: 0;
+  // visibility: hidden;
+}
+
 .slide-in-right-enter-active,
 .slide-in-right-leave-active {
   transition: all 0.5s;
@@ -133,5 +166,16 @@ export default {
 .slide-in-right-leave-to {
   opacity: 0;
   transform: translateX(100%);
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0px, 7px, 0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0px, 5px, 0px);
+  }
 }
 </style>
