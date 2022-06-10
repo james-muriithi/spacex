@@ -3,7 +3,7 @@
     <router-link
       to=""
       v-bind="$attrs"
-      class="border-white border-2 px-14 py-4 relative"
+      class="border-white border-2 px-10 lg:px-12 py-4 relative"
     >
       <div class="absolute hover top-0 left-0 w-full h-full"></div>
       <span class="relative z-10 uppercase text">
