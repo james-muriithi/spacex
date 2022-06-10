@@ -20,7 +20,7 @@
         :to="{ name: 'home' }"
         class="flex items-center mx-auto lg:ml-0 lg:mr-0"
       >
-        <img src="@/assets/logo.svg" class="h-6 sm:h-6" alt="Spacex Logo" />
+        <img src="@/assets/logo.svg" class="h-5 sm:h-6" alt="Spacex Logo" />
       </router-link>
       <div class="flex items-center md:order-2">
         <router-link
@@ -42,6 +42,7 @@
           "
           aria-controls="mobile-menu-2"
           aria-expanded="false"
+          @click="$emit('toggleSidebar')"
         >
           <span class="sr-only">Open main menu</span>
           <svg
@@ -92,10 +93,7 @@
           "
         >
           <li
-            v-for="({ title, routeName }, index) in navbarItems.slice(
-              0,
-              navbarItems.length - 1
-            )"
+            v-for="({ title, routeName }, index) in navbarItems.slice(0, -1)"
             :key="index"
           >
             <router-link
@@ -113,10 +111,11 @@
 </template>
 
 <script>
-import { menuItems } from "../../utils/menuItems";
+import { menuItems } from "@/utils/menuItems";
 
 export default {
   name: "Navbar",
+  emits: ['toggleSidebar'],
   computed: {
     navbarItems: () => menuItems,
   },

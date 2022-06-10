@@ -1,6 +1,6 @@
 <template>
-  <section
-    class="h-full relative"
+  <div
+    class="h-full relative section"
     :style="{ backgroundImage: `url(${backgroundImage})` }"
   >
     <div class="absolute bottom-32 text-white left-8 lg:left-20 md:w-1/2">
@@ -12,12 +12,12 @@
     </div>
     <div class="absolute bottom-4 w-full text-white hidden md:block">
       <div class="text-center scroll-down-arrow">
-        <span class="material-icons text-5xl font-light cursor-pointer">
+        <span class="material-icons text-5xl cursor-pointer">
           keyboard_arrow_down
         </span>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
+.section {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

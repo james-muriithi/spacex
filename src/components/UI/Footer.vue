@@ -11,7 +11,7 @@
             :key="index"
             class="px-2 md:px-3 mb-4"
           >
-            <router-link :to="url">
+            <router-link :to="url" class="hover-dim">
               {{ title }}
             </router-link>
           </div>
@@ -65,13 +65,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-a {
-  -webkit-transition: color 1s cubic-bezier(0.25, 1, 0.25, 1),
-    background-color 1s cubic-bezier(0.25, 1, 0.25, 1);
-  transition: color 1s cubic-bezier(0.25, 1, 0.25, 1),
-    background-color 1s cubic-bezier(0.25, 1, 0.25, 1);
-  &:hover {
-    @apply text-gray-400;
-  }
-}
 </style>
