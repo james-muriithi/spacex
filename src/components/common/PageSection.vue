@@ -12,7 +12,7 @@
     </div>
     <div class="absolute bottom-4 w-full text-white hidden md:block">
       <div class="text-center scroll-down-arrow">
-        <span class="material-icons text-5xl font-light">
+        <span class="material-icons text-5xl font-light cursor-pointer">
           keyboard_arrow_down
         </span>
       </div>

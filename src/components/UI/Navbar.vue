@@ -1,20 +1,31 @@
 <template>
-  <nav class="bg-transparent px-2 sm:px-4 py-4 md:py-6 absolute w-full z-10">
+  <nav
+    class="
+      bg-transparent
+      px-2
+      sm:px-4
+      py-4
+      md:py-6
+      absolute
+      w-full
+      z-10
+      lg:fixed
+      text-sm
+      lg:text-xs
+      xl:text-sm
+    "
+  >
     <div class="flex lg:justify-between items-center md:mx-6">
-      <router-link :to="{ name: 'home' }" class="flex items-center mx-auto lg:ml-0 lg:mr-0">
+      <router-link
+        :to="{ name: 'home' }"
+        class="flex items-center mx-auto lg:ml-0 lg:mr-0"
+      >
         <img src="@/assets/logo.svg" class="h-6 sm:h-6" alt="Spacex Logo" />
       </router-link>
       <div class="flex items-center md:order-2">
         <router-link
           :to="{ name: navbarItems[navbarItems.length - 1]['routeName'] }"
-          class="
-            text-white
-            uppercase
-            md:text-sm md:font-medium
-            lg:block
-            hidden
-            nav-link
-          "
+          class="text-white uppercase font-medium lg:block hidden nav-link"
         >
           <span>{{ navbarItems[navbarItems.length - 1]["title"] }}</span>
         </router-link>
@@ -72,11 +83,10 @@
       >
         <ul
           class="
-            flex flex-col
-            md:flex-row md:text-sm
+            flex flex-row
             space-x-3
             lg:space-x-5
-            md:font-medium
+            font-medium
             uppercase
             items-center
           "
@@ -103,45 +113,12 @@
 </template>
 
 <script>
+import { menuItems } from "../../utils/menuItems";
+
 export default {
   name: "Navbar",
-  data() {
-    return {
-      navbarItems: [
-        {
-          title: "falcon 9",
-          routeName: "home",
-        },
-        {
-          title: "falcon heavy",
-          routeName: "home",
-        },
-        {
-          title: "dragon",
-          routeName: "home",
-        },
-        {
-          title: "starship",
-          routeName: "home",
-        },
-        {
-          title: "human spaceflight",
-          routeName: "home",
-        },
-        {
-          title: "rideshare",
-          routeName: "home",
-        },
-        {
-          title: "starlink",
-          routeName: "home",
-        },
-        {
-          title: "shop",
-          routeName: "home",
-        },
-      ],
-    };
+  computed: {
+    navbarItems: () => menuItems,
   },
 };
 </script>
