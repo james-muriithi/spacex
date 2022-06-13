@@ -1,7 +1,6 @@
 <template>
   <nav
     class="
-      bg-transparent
       px-2
       sm:px-4
       py-4
@@ -13,7 +12,9 @@
       text-sm
       lg:text-xs
       xl:text-sm
+      transition
     "
+    ref="navbar"
   >
     <div class="flex lg:justify-between items-center md:mx-6">
       <router-link
@@ -115,9 +116,50 @@ import { menuItems } from "@/utils/menuItems";
 
 export default {
   name: "Navbar",
-  emits: ['toggleSidebar'],
+  emits: ["toggleSidebar"],
+  data() {
+    return {
+      lastScrollPos: 0,
+    };
+  },
   computed: {
     navbarItems: () => menuItems,
+  },
+  methods: {
+    onScroll() {
+      const mobileWidth = 576;
+      if (window.innerWidth > mobileWidth) return;
+
+      const hideNavHeight = window.innerHeight / 4.5;
+
+      if (window.scrollY < hideNavHeight) {
+        this.fixedNavbar();
+        return;
+      }
+
+      this.unFixNavbar();
+      // if scroll up
+      if (window.scrollY < this.lastScrollPos) {
+        this.fixedNavbar(true);
+      }
+      // set last scroll pos
+      this.lastScrollPos = window.scrollY <= 0 ? 0 : window.scrollY;
+    },
+    fixedNavbar(addBg = false) {
+      this.$refs.navbar.classList.remove("absolute", "bg-dark");
+      this.$refs.navbar.classList.add("fixed");
+      if (addBg) this.$refs.navbar.classList.add("bg-dark");
+    },
+    unFixNavbar() {
+      this.$refs.navbar.classList.remove("fixed", "bg-dark");
+      this.$refs.navbar.classList.add("absolute");
+    },
+  },
+  created() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.onScroll);
   },
 };
 </script>
