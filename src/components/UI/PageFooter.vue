@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: "Footer",
+  name: "PageFooter",
   computed: {
     year() {
       return new Date().getFullYear();

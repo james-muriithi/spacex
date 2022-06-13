@@ -5,16 +5,17 @@
     @toggleSidebar="sidebarOpen = !sidebarOpen"
   />
   <router-view />
-  <Footer />
+  <PageFooter />
 </template>
 
 <script>
 import Navbar from "@/components/UI/Navbar.vue";
-import Footer from "./components/UI/Footer.vue";
+import PageFooter from "./components/UI/PageFooter.vue";
 import Sidebar from "./components/UI/Sidebar.vue";
+
 export default {
   name: "App",
-  components: { Navbar, Footer, Sidebar },
+  components: { Navbar, PageFooter, Sidebar },
   data: () => ({
     sidebarOpen: false,
   }),

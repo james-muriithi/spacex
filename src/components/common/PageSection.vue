@@ -22,6 +22,7 @@
 
 <script>
 import SectionButton from "./SectionButton.vue";
+
 export default {
   components: { SectionButton },
   name: "PageSection",
@@ -66,7 +67,7 @@ export default {
     this.onResize();
     window.addEventListener("resize", this.onResize);
   },
-  destroyed() {
+  unmounted() {
     window.removeEventListener("resize", this.onResize);
   },
 };
