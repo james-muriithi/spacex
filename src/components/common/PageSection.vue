@@ -1,7 +1,7 @@
 <template>
-  <div
-    class="h-full relative section"
-    :style="{ backgroundImage: `url(${backgroundImage})` }"
+  <PageBackground
+    :mobileBgImage="mobileBgImage"
+    :desktopBgImage="desktopBgImage"
   >
     <div class="absolute bottom-32 text-white left-8 lg:left-20 md:w-1/2">
       <h4 class="uppercase text-xl font-normal mb-4" v-if="subTitle">
@@ -17,24 +17,17 @@
         </span>
       </div>
     </div>
-  </div>
+  </PageBackground>
 </template>
 
 <script>
+import PageBackground from "./PageBackground.vue";
 import SectionButton from "./SectionButton.vue";
 
 export default {
-  components: { SectionButton },
+  components: { SectionButton, PageBackground },
   name: "PageSection",
   props: {
-    desktopBgImage: {
-      type: String,
-      required: true,
-    },
-    mobileBgImage: {
-      type: String,
-      required: true,
-    },
     subTitle: {
       type: String,
       required: false,
@@ -48,46 +41,15 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      backgroundImage: "",
-    };
-  },
-  methods: {
-    onResize() {
-      const width = window.innerWidth;
-      if (width <= 600) {
-        this.backgroundImage = this.mobileBgImage;
-      } else {
-        this.backgroundImage = this.desktopBgImage;
-      }
-    },
-  },
-  created() {
-    this.onResize();
-    window.addEventListener("resize", this.onResize);
-  },
-  unmounted() {
-    window.removeEventListener("resize", this.onResize);
-  },
 };
 </script>
 
 <style lang="scss" scoped>
-.section {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  @media screen and (max-width: 576px) {
-    background-position: center bottom;
-  }
-  .scroll-down-arrow {
-    opacity: 0;
-    visibility: inherit;
-    animation: scrolldown 3s infinite;
-  }
+.scroll-down-arrow {
+  opacity: 0;
+  visibility: inherit;
+  animation: scrolldown 3s infinite;
 }
-
 @keyframes scrolldown {
   0% {
     opacity: 0;

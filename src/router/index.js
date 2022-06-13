@@ -9,7 +9,7 @@ const routes = [
     {
         path: '/vehicles/falcon-9',
         name: 'falcon9',
-        component: import(/* webpackChunkName: "vehicles" */ '../views/Falcon.vue')
+        component: () => import(/* webpackChunkName: "vehicles" */ '../views/Falcon.vue')
     }
 ]
 const router = createRouter({
