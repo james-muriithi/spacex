@@ -1,7 +1,7 @@
 export const menuItems = [
     {
         title: "falcon 9",
-        routeName: "home",
+        routeName: "falcon9",
     },
     {
         title: "falcon heavy",
