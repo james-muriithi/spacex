@@ -42,7 +42,7 @@
           </button>
         </div>
 
-        <div class="overflow-y-auto uppercase text-sm">
+        <div class="overflow-y-hidden uppercase text-sm">
           <template class="block lg:hidden">
             <router-link
               v-for="({ title, routeName }, index) in navbarItems"
