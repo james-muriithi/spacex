@@ -40,6 +40,14 @@ export default {
       type: String,
       required: true,
     },
+    desktopBgImage: {
+      type: String,
+      required: true,
+    },
+    mobileBgImage: {
+      type: String,
+      required: true,
+    },
   },
 };
 </script>

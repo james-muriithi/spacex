@@ -1,5 +1,8 @@
 <template>
-  <Navbar @toggleSidebar="sidebarOpen = !sidebarOpen" />
+  <Navbar
+    @toggleSidebar="sidebarOpen = !sidebarOpen"
+    :hideNavOnDesktop="hideNavOnDesktop"
+  />
   <Sidebar
     :sidebarOpen="sidebarOpen"
     @toggleSidebar="sidebarOpen = !sidebarOpen"
@@ -18,7 +21,14 @@ export default {
   components: { Navbar, PageFooter, Sidebar },
   data: () => ({
     sidebarOpen: false,
+    hideNavOnDesktop: false,
   }),
+  watch: {
+    $route(to) {
+      this.sidebarOpen = false;
+      this.hideNavOnDesktop = to.meta.hideNavOnDesktop || false;
+    },
+  },
 };
 </script>
 

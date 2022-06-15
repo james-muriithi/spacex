@@ -8,12 +8,12 @@
       absolute
       w-full
       z-10
-      lg:fixed
       text-sm
       lg:text-xs
       xl:text-sm
       transition
     "
+    :class="{ 'lg:fixed': !hideNavOnDesktop }"
     ref="navbar"
   >
     <div class="flex lg:justify-between items-center md:mx-6">
@@ -117,6 +117,12 @@ import { menuItems } from "@/utils/menuItems";
 export default {
   name: "Navbar",
   emits: ["toggleSidebar"],
+  props: {
+    hideNavOnDesktop: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       lastScrollPos: 0,
