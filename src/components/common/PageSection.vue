@@ -3,12 +3,13 @@
     :mobileBgImage="mobileBgImage"
     :desktopBgImage="desktopBgImage"
   >
+  <slot />
     <div class="absolute bottom-32 text-white left-8 lg:left-20 md:w-1/2">
-      <h4 class="uppercase text-xl font-normal mb-4" v-if="subTitle">
+      <h4 class="uppercase md:text-xl font-normal mb-2" v-if="subTitle">
         {{ subTitle }}
       </h4>
-      <h2 class="text-3xl lg:text-5xl font-bold">{{ title }}</h2>
-      <SectionButton to="#"> {{ buttonText }} </SectionButton>
+      <h2 class="text-3xl lg:text-5xl font-bold uppercase">{{ title }}</h2>
+      <SectionButton to="#" v-if="buttonText"> {{ buttonText }} </SectionButton>
     </div>
     <div class="absolute bottom-4 w-full text-white hidden md:block">
       <div class="text-center scroll-down-arrow">
@@ -38,7 +39,7 @@ export default {
     },
     buttonText: {
       type: String,
-      required: true,
+      required: false,
     },
     desktopBgImage: {
       type: String,
