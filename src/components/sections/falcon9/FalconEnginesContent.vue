@@ -14,14 +14,14 @@
             <div
               class="pr-4 border-r border-gray-400 cursor-pointer"
               :class="{ 'text-gray-400': tab !== 'sea-level' }"
-              @click="tab = 'sea-level'"
+              @click="$emit('tabChange', 'sea-level')"
             >
               sea level
             </div>
             <div
               class="pl-4 cursor-pointer"
               :class="{ 'text-gray-400': tab !== 'vacuum' }"
-              @click="tab = 'vacuum'"
+              @click="$emit('tabChange', 'vacuum')"
             >
               vacuum
             </div>
@@ -90,10 +90,12 @@
 <script>
 export default {
   name: "FalconEnginesContent",
-  data() {
-    return {
-      tab: "sea-level",
-    };
+  emits: ['tabChange'],
+  props: {
+    tab: {
+      type: String,
+      default: 'sea-level'
+    }
   },
 };
 </script>

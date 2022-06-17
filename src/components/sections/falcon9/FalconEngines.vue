@@ -4,9 +4,17 @@
     :mobileBgImage="mobileBgImage"
     class="falcon-engines relative"
   >
-    <FalconEnginesContent class="hidden sm:flex" />
+    <FalconEnginesContent
+      :tab="currentTab"
+      @tabChange="currentTab = $event"
+      class="hidden sm:flex"
+    />
   </PageBackground>
-  <FalconEnginesContent class="mb-10 block sm:hidden" />
+  <FalconEnginesContent
+    :tab="currentTab"
+    @tabChange="currentTab = $event"
+    class="mb-10 block sm:hidden"
+  />
 </template>
 
 <script>
@@ -16,9 +24,34 @@ import FalconEnginesContent from "./FalconEnginesContent.vue";
 export default {
   name: "FalconEngines",
   components: { PageBackground, FalconEnginesContent },
+  data() {
+    return {
+      currentTab: "sea-level",
+      mobileBgImage: "/images/merlin-mobile.webp",
+      desktopBgImage: "/images/merlin-desktop.webp",
+    };
+  },
+  computed: {
+    bgData: () => ({
+      "sea-level": {
+        mobileBgImage: "/images/merlin-mobile.webp",
+        desktopBgImage: "/images/merlin-desktop.webp",
+      },
+      vacuum: {
+        mobileBgImage: "/images/merlin-vac-mobile.webp",
+        desktopBgImage: "/images/merlin-vac-desktop.webp",
+      },
+    }),
+  },
   created() {
-    this.mobileBgImage = "/images/merlin-mobile.webp";
-    this.desktopBgImage = "/images/merlin-desktop.webp";
+    this.mobileBgImage = this.bgData[this.currentTab].mobileBgImage;
+    this.desktopBgImage = this.bgData[this.currentTab].desktopBgImage;
+  },
+  watch: {
+    currentTab(value) {
+      this.mobileBgImage = this.bgData[value].mobileBgImage;
+      this.desktopBgImage = this.bgData[value].desktopBgImage;
+    },
   },
 };
 </script>
