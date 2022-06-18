@@ -1,0 +1,13 @@
+name: Run ESLINT
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        version: 6.20.3
+    - name: Install modules
+      run: npm ci
+    - name: Run ESLint
+      run: npm run lint
