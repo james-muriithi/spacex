@@ -6,6 +6,14 @@ const routes = [
         name: 'home',
         component: Home,
     },
+    {
+        path: '/vehicles/falcon-9',
+        name: 'falcon9',
+        component: () => import(/* webpackChunkName: "vehicles" */ '../views/Falcon.vue'),
+        meta: {
+            hideNavOnDesktop: true
+        }
+    }
 ]
 const router = createRouter({
     history: createWebHistory(),

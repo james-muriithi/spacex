@@ -42,7 +42,7 @@
           </button>
         </div>
 
-        <div class="overflow-y-hidden uppercase text-sm">
+        <div class="uppercase text-sm">
           <template class="block lg:hidden">
             <router-link
               v-for="({ title, routeName }, index) in navbarItems"
@@ -154,7 +154,6 @@ export default {
   animation-fill-mode: both;
   transform: matrix(1, 0, 0, 1, 0, 0);
   opacity: 0;
-  // visibility: hidden;
 }
 
 .slide-in-right-enter-active,

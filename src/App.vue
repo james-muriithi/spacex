@@ -1,23 +1,34 @@
 <template>
-  <Navbar @toggleSidebar="sidebarOpen = !sidebarOpen" />
+  <Navbar
+    @toggleSidebar="sidebarOpen = !sidebarOpen"
+    :hideNavOnDesktop="hideNavOnDesktop"
+  />
   <Sidebar
     :sidebarOpen="sidebarOpen"
     @toggleSidebar="sidebarOpen = !sidebarOpen"
   />
   <router-view />
-  <Footer />
+  <PageFooter />
 </template>
 
 <script>
 import Navbar from "@/components/UI/Navbar.vue";
-import Footer from "./components/UI/Footer.vue";
+import PageFooter from "./components/UI/PageFooter.vue";
 import Sidebar from "./components/UI/Sidebar.vue";
+
 export default {
   name: "App",
-  components: { Navbar, Footer, Sidebar },
+  components: { Navbar, PageFooter, Sidebar },
   data: () => ({
     sidebarOpen: false,
+    hideNavOnDesktop: false,
   }),
+  watch: {
+    $route(to) {
+      this.sidebarOpen = false;
+      this.hideNavOnDesktop = to.meta.hideNavOnDesktop || false;
+    },
+  },
 };
 </script>
 

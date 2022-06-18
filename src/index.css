@@ -4,20 +4,15 @@
 
 @font-face {
     font-family: 'D-DIN';
-    src: url('fonts/D-DIN-Bold.otf') format('otf');
+    src: url('/fonts/D-DIN-Bold.woff2') format('woff2');
     font-weight: 700;
 }
 
-@font-face {
-    font-family: 'D-DIN';
-    src: url('fonts/D-DIN.otf') format('otf');
-    font-weight: 400;
-}
 
 @font-face {
     font-family: 'D-DIN';
-    src: url('fonts/D-DINCondensed.otf') format('otf');
-    font-weight: 500;
+    src: url('/fonts/D-DIN.woff2') format('woff2');
+    font-weight: 400;
 }
 
 @layer base {
