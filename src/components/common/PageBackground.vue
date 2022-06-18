@@ -22,26 +22,23 @@ export default {
   },
   data() {
     return {
-      backgroundImage: "",
+      innerWidth: window.innerWidth,
     };
   },
-  methods: {
-    onResize() {
-      const width = window.innerWidth;
-      if (width <= 600) {
-        this.backgroundImage = this.mobileBgImage;
-      } else {
-        this.backgroundImage = this.desktopBgImage;
-      }
+  computed: {
+    backgroundImage() {
+      return this.getBg(this.innerWidth);
     },
   },
-  watch: {
-    desktopBgImage(){
-      this.onResize()
+  methods: {
+    getBg(width) {
+      return width <= 600 ? this.mobileBgImage : this.desktopBgImage;
+    },
+    onResize() {
+      this.innerWidth = window.innerWidth;
     },
   },
   created() {
-    this.onResize();
     window.addEventListener("resize", this.onResize);
   },
   unmounted() {

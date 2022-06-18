@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-dark py-16">
+  <div class="bg-dark py-16 px-6">
     <div class="flex justify-center h-28 mb-6">
       <span class="border-r"></span>
     </div>
