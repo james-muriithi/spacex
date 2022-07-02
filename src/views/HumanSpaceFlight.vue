@@ -16,18 +16,33 @@
   <SpaceStation />
   <Moon />
   <MarsAndBeyond />
-  <FalconInfo />
+  <FooterInfo
+    saleText="For inquiries about our private passenger program, contact"
+  >
+    <SectionButton class="md:mr-6 text-white px-6 lg:px-7">
+      Contact us
+    </SectionButton>
+  </FooterInfo>
 </template>  
   
 <script>
 import EarthOrbit from "../components/sections/spaceflight/EarthOrbit.vue";
-import MarsAndBeyond from '../components/sections/spaceflight/MarsAndBeyond.vue';
+import MarsAndBeyond from "../components/sections/spaceflight/MarsAndBeyond.vue";
 import Moon from "../components/sections/spaceflight/Moon.vue";
 import SpaceFlightBanner from "../components/sections/spaceflight/SpaceFlightBanner.vue";
 import SpaceStation from "../components/sections/spaceflight/SpaceStation.vue";
-import FalconInfo from "../components/sections/falcon9/FalconInfo.vue";
+import FooterInfo from "../components/common/FooterInfo.vue";
+import SectionButton from "../components/common/SectionButton.vue";
 export default {
   name: "HumanSpaceFlight",
-  components: { SpaceFlightBanner, EarthOrbit, SpaceStation, Moon, MarsAndBeyond, FalconInfo },
+  components: {
+    SpaceFlightBanner,
+    EarthOrbit,
+    SpaceStation,
+    Moon,
+    MarsAndBeyond,
+    FooterInfo,
+    SectionButton,
+  },
 };
 </script>

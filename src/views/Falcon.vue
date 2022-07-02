@@ -5,7 +5,7 @@
     <FalconFlight />
     <FalconEngines />
     <FalconGallery />
-    <FalconInfo />
+    <FooterInfo />
 </template>
 
 <script>
@@ -15,9 +15,9 @@ import FalconDescription from '@/components/sections/falcon9/FalconDescription.v
 import FalconFlight from '../components/sections/falcon9/FalconFlight.vue'
 import FalconEngines from '../components/sections/falcon9/FalconEngines.vue'
 import FalconGallery from '../components/sections/falcon9/FalconGallery.vue'
-import FalconInfo from '../components/sections/falcon9/FalconInfo.vue'
+import FooterInfo from '../components/common/FooterInfo.vue'
 export default {
-  components: { FalconBanner, Statistics, FalconDescription, FalconFlight, FalconEngines, FalconGallery, FalconInfo },
+  components: { FalconBanner, Statistics, FalconDescription, FalconFlight, FalconEngines, FalconGallery, FooterInfo, },
     name: "Falcon"
 }
 </script>
