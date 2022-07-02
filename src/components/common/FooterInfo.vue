@@ -5,10 +5,12 @@
     </div>
     <div class="text-center mb-6">
       <span class="text-gray-400 text-sm">
-        {{saleText}}
-        <a target="_blank" class="text-white" href="mailto:sales@spacex.com">
-          sales@spacex.com
-        </a>
+        {{ saleText }}
+        <slot name="cotactLink">
+          <a target="_blank" class="text-white" href="mailto:sales@spacex.com">
+            sales@spacex.com
+          </a>
+        </slot>
       </span>
     </div>
     <div class="flex justify-center flex-wrap">
@@ -32,9 +34,9 @@ export default {
   name: "FooterInfo",
   props: {
     saleText: {
-        type: String,
-        default: 'For information about our launch services, contact'
-    }
-  }
+      type: String,
+      default: "For information about our launch services, contact",
+    },
+  },
 };
 </script>

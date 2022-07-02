@@ -25,7 +25,8 @@ export const menuItems = [
     },
     {
         title: "starlink",
-        routeName: "home",
+        routeName: "https://www.starlink.com/",
+        external: true,
     },
     {
         title: "shop",
