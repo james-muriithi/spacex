@@ -13,6 +13,14 @@ const routes = [
         meta: {
             hideNavOnDesktop: true
         }
+    },
+    {
+        path: '/human-spaceflight',
+        name: 'spaceflight',
+        component: () => import(/* webpackChunkName: "vehicles" */ '../views/HumanSpaceFlight.vue'),
+        meta: {
+            hideNavOnDesktop: true
+        }
     }
 ]
 const router = createRouter({

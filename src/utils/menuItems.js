@@ -17,7 +17,7 @@ export const menuItems = [
     },
     {
         title: "human spaceflight",
-        routeName: "home",
+        routeName: "spaceflight",
     },
     {
         title: "rideshare",
