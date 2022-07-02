@@ -145,9 +145,6 @@ export default {
   },
   methods: {
     onScroll() {
-      const mobileWidth = 576;
-      if (window.innerWidth > mobileWidth) return;
-
       const hideNavHeight = window.innerHeight / 4.5;
 
       if (window.scrollY < hideNavHeight) {
