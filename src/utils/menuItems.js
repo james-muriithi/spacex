@@ -5,7 +5,7 @@ export const menuItems = [
     },
     {
         title: "falcon heavy",
-        routeName: "home",
+        routeName: "falcon-heavy",
     },
     {
         title: "dragon",

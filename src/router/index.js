@@ -9,7 +9,17 @@ const routes = [
     {
         path: '/vehicles/falcon-9',
         name: 'falcon9',
+        children: [],
         component: () => import(/* webpackChunkName: "vehicles" */ '../views/Falcon.vue'),
+        meta: {
+            hideNavOnDesktop: true
+        }
+    },
+    {
+        path: '/vehicles/falcon-heavy',
+        name: 'falcon-heavy',
+        children: [],
+        component: () => import(/* webpackChunkName: "vehicles" */ '../views/FalconHeavy.vue'),
         meta: {
             hideNavOnDesktop: true
         }

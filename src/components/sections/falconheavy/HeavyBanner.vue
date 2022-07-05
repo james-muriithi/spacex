@@ -2,8 +2,8 @@
   <PageBanner
     :desktopBgImage="desktopBgImage"
     :mobileBgImage="mobileBgImage"
-    title="Falcon 9"
-    subTitle="FIRST ORBITAL CLASS ROCKET CAPABLE OF REFLIGHT"
+    title="falcon heavy"
+    subTitle="THE WORLD’S MOST POWERFUL ROCKET"
   />
 </template>
 
@@ -11,10 +11,10 @@
 import PageBanner from "../../common/PageBanner.vue";
 export default {
   components: { PageBanner },
-  name: "FalconBanner",
+  name: "HeavyBanner",
   created() {
-    this.mobileBgImage = "/images/f9_feature.webp";
-    this.desktopBgImage = "/images/f9_feature.webp";
+    this.mobileBgImage = "/images/fh_feature-mobile.webp";
+    this.desktopBgImage = "/images/fh_feature.webp";
   },
 };
 </script>
