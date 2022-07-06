@@ -3,6 +3,7 @@
     <Statistics />
     <HeavyDescription />
     <HeavyFlight />
+    <HeavyVideo />
     <FalconEngines />
     <HeavyGallery />
     <FooterInfo />
@@ -16,8 +17,9 @@ import HeavyFlight from '../components/sections/falconheavy/HeavyFlight.vue';
 import FalconEngines from '../components/sections/falcon9/FalconEngines.vue';
 import HeavyGallery from '../components/sections/falconheavy/HeavyGallery.vue';
 import FooterInfo from '../components/common/FooterInfo.vue';
+import HeavyVideo from '../components/sections/falconheavy/HeavyVideo.vue';
 export default {
     name: "FalconHeavy",
-    components: { HeavyBanner, Statistics, HeavyDescription, HeavyFlight, FalconEngines, HeavyGallery, FooterInfo }
+    components: { HeavyBanner, Statistics, HeavyDescription, HeavyFlight, FalconEngines, HeavyGallery, FooterInfo, HeavyVideo }
 }  
 </script>
