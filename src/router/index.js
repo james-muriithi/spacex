@@ -25,6 +25,15 @@ const routes = [
         }
     },
     {
+        path: '/vehicles/dragon',
+        name: 'dragon',
+        children: [],
+        component: () => import(/* webpackChunkName: "vehicles" */ '../views/Dragon.vue'),
+        meta: {
+            hideNavOnDesktop: true
+        }
+    },
+    {
         path: '/human-spaceflight',
         name: 'spaceflight',
         component: () => import(/* webpackChunkName: "vehicles" */ '../views/HumanSpaceFlight.vue'),
