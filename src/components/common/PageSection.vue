@@ -11,22 +11,17 @@
       <h2 class="text-3xl lg:text-5xl font-bold uppercase">{{ title }}</h2>
       <SectionButton to="#" v-if="buttonText"> {{ buttonText }} </SectionButton>
     </div>
-    <div class="absolute bottom-4 w-full text-white hidden md:block">
-      <div class="text-center scroll-down-arrow">
-        <span class="material-icons text-5xl cursor-pointer">
-          keyboard_arrow_down
-        </span>
-      </div>
-    </div>
+    <PageScrollDown />
   </PageBackground>
 </template>
 
 <script>
 import PageBackground from "./PageBackground.vue";
 import SectionButton from "./SectionButton.vue";
+import PageScrollDown from "./PageScrollDown.vue";
 
 export default {
-  components: { SectionButton, PageBackground },
+  components: { SectionButton, PageBackground, PageScrollDown },
   name: "PageSection",
   props: {
     subTitle: {
@@ -52,22 +47,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.scroll-down-arrow {
-  opacity: 0;
-  visibility: inherit;
-  animation: scrolldown 3s infinite;
-}
-@keyframes scrolldown {
-  0% {
-    opacity: 0;
-    transform: translate3d(0px, -20px, 0px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate3d(0px, -10px, 0px);
-  }
-}
-</style>

@@ -9,7 +9,7 @@ export const menuItems = [
     },
     {
         title: "dragon",
-        routeName: "home",
+        routeName: "dragon",
     },
     {
         title: "starship",
