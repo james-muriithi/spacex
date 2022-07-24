@@ -19,7 +19,7 @@ export default {
         {
           mobileBgImage: "/images/banner-mobile.webp",
           desktopBgImage: "/images/banner-desktop.webp",
-          title: "NILESAT 301 MISSION",
+          title: "CRS-25 MISSION",
           subTitle: "recent mission",
           buttonText: "rewatch",
         },
