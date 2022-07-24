@@ -40,7 +40,15 @@ const routes = [
         meta: {
             hideNavOnDesktop: true
         }
-    }
+    },
+    {
+        path: '/vehicles/starship',
+        name: 'starship',
+        component: () => import(/* webpackChunkName: "vehicles" */ '../views/Starship.vue'),
+        meta: {
+            hideNavOnDesktop: true
+        }
+    },
 ]
 const router = createRouter({
     history: createWebHistory(),

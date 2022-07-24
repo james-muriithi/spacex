@@ -104,14 +104,14 @@
               v-if="external"
               :href="routeName"
               target="_blank"
-              class="block pr-1 text-white nav-link"
+              class="block pr-1 text-white nav-link font-semibold"
             >
             <span>{{ title }}</span>
             </a>
             <router-link
               v-else
               :to="{ name: routeName }"
-              class="block pr-1 text-white nav-link"
+              class="block pr-1 text-white nav-link font-semibold"
               aria-current="page"
             >
               <span>{{ title }}</span>

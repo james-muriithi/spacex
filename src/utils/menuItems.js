@@ -13,7 +13,7 @@ export const menuItems = [
     },
     {
         title: "starship",
-        routeName: "home",
+        routeName: "starship",
     },
     {
         title: "human spaceflight",
