@@ -26,7 +26,7 @@
       <div class="flex items-center md:order-2">
         <router-link
           :to="{ name: navbarItems[navbarItems.length - 1]['routeName'] }"
-          class="text-white uppercase font-medium lg:block hidden nav-link"
+          class="text-white uppercase font-semibold lg:block hidden nav-link"
         >
           <span>{{ navbarItems[navbarItems.length - 1]["title"] }}</span>
         </router-link>

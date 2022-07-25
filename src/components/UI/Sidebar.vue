@@ -45,9 +45,9 @@
         <div class="uppercase text-sm">
           <template class="block lg:hidden">
             <router-link
-              v-for="({ title, routeName }, index) in navbarItems"
+              v-for="({ title, routeName, external }, index) in navbarItems"
               :key="index"
-              :to="{ name: routeName }"
+              :to="external ? routeName : { name: routeName }"
               class="
                 block
                 border-b border-gray-700
@@ -62,9 +62,9 @@
             </router-link>
           </template>
           <router-link
-            v-for="({ title, routeName }, index) in sidebarItems"
+            v-for="({ title, routeName, external }, index) in sidebarItems"
             :key="index"
-            :to="{ name: routeName }"
+            :to="external ? routeName : { name: routeName }"
             class="block border-b border-gray-700 py-2 text-right hover-dim"
             :style="{
               animationDelay: calculateDelay(
