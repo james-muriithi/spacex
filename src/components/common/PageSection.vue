@@ -4,7 +4,7 @@
     :desktopBgImage="desktopBgImage"
   >
   <slot />
-    <div class="absolute bottom-32 text-white left-4 md:left-8 lg:left-20 md:w-1/2">
+    <div class="absolute bottom-32 text-white left-4 md:left-8 lg:left-20 md:w-2/5 lg:w-1/3">
       <h4 class="uppercase md:text-xl font-normal mb-2" v-if="subTitle">
         {{ subTitle }}
       </h4>
